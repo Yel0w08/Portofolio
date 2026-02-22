@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "dgSpecHash": "uo50K6YJPq4=",
+  "success": true,
+  "projectFilePath": "D:\\Dev\\Portofolio\\Portfolio.net\\Portfolio.net.Web\\Portfolio.net.Web.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\natha\\.nuget\\packages\\microsoft.aspnetcore.app.internal.assets\\10.0.3\\microsoft.aspnetcore.app.internal.assets.10.0.3.nupkg.sha512",
+    "C:\\Users\\natha\\.nuget\\packages\\microsoft.aspnetcore.components.webassembly\\10.0.0\\microsoft.aspnetcore.components.webassembly.10.0.0.nupkg.sha512",
+    "C:\\Users\\natha\\.nuget\\packages\\microsoft.aspnetcore.components.webassembly.server\\10.0.0\\microsoft.aspnetcore.components.webassembly.server.10.0.0.nupkg.sha512",
+    "C:\\Users\\natha\\.nuget\\packages\\microsoft.dotnet.hotreload.webassembly.browser\\10.0.103\\microsoft.dotnet.hotreload.webassembly.browser.10.0.103.nupkg.sha512",
+    "C:\\Users\\natha\\.nuget\\packages\\microsoft.jsinterop.webassembly\\10.0.0\\microsoft.jsinterop.webassembly.10.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

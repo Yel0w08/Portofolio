@@ -1,0 +1,1 @@
+D:\Dev\Portofolio\Portfolio.net\Portfolio.net.Shared\obj\Debug\net10.0\staticwebassets.build.json

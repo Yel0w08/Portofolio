@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="Portfolio.net.Shared/Portfolio.net.Shared.csproj" />
+  <Project Path="Portfolio.net.Web.Client/Portfolio.net.Web.Client.csproj" />
+  <Project Path="Portfolio.net.Web/Portfolio.net.Web.csproj" />
+  <Project Path="Portfolio.net/Portfolio.net.csproj" />
+</Solution>
