@@ -10,13 +10,17 @@
   font-family: JetbrainMonoNerdFontSemiBold; /* set name */
   src: url(assets/fonts/JetbrainMonoNerdFont/JetBrainsMonoNerdFontMono-SemiBold.ttf); /* url of the font */
 }
+@font-face {
+  font-family: JetbrainMonoNerdFontLight; /* set name */
+  src: url(assets/fonts/JetbrainMonoNerdFont/JetBrainsMonoNerdFontMono-Light.ttf); /* url of the font */
+}
 body {
   background-color: #000000;
      color: #ffffff;
        font-family: JetbrainMonoNerdFont; 
 }
 p {
-  font-family: JetbrainMonoNerdFont; 
+  font-family: JetbrainMonoNerdFontLight; 
 
 }
 h1{
