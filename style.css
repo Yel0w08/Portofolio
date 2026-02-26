@@ -37,4 +37,5 @@ background: #000000;
 .Link {
   color: #ffd900;
 font-family: JetbrainMonoNerdFontSemiBold; 
+underline: none;
 }
