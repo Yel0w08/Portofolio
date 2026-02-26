@@ -1,8 +1,23 @@
 @font-face {
-  font-family: ComicShannsMonoNerdFontMono; /* set name */
-  src: url(assets/ComicShannsMonoNerdFontMono-Regular.woff); /* url of the font */
+  font-family: JetbrainMonoNerdFont; /* set name */
+  src: url(assets/fonts/JetbrainMonoNerdFont/JetBrainsMonoNerdFontMono-Regular.ttf); /* url of the font */
+}
+@font-face {
+  font-family: JetbrainMonoNerdFontBold; /* set name */
+  src: url(assets/fonts/JetbrainMonoNerdFont/JetBrainsMonoNerdFontMono-Bold.ttf); /* url of the font */
+}
+@font-face {
+  font-family: JetbrainMonoNerdFontSemiBold; /* set name */
+  src: url(assets/fonts/JetbrainMonoNerdFont/JetBrainsMonoNerdFontMono-SemiBold.ttf); /* url of the font */
 }
 
+
 p {
-  font-family: ComicShannsMonoNerdFontMono; /* use font */
+  font-family: JetbrainMonoNerdFont; /* use font */
+}
+h1{
+  font-family: JetbrainMonoNerdFontBold; /* use font */
+}
+h2{
+  font-family: JetbrainMonoNerdFontSemiBold; /* use font */
 }
