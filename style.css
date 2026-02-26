@@ -15,15 +15,15 @@ body {
      color: #ffffff;
 }
 p {
-  font-family: JetbrainMonoNerdFont; /* use font */
+  font-family: JetbrainMonoNerdFont; 
 
 }
 h1{
-  font-family: JetbrainMonoNerdFontBold; /* use font */
+  font-family: JetbrainMonoNerdFontBold; 
 
 }
 h2{
-  font-family: JetbrainMonoNerdFontSemiBold; /* use font */
+  font-family: JetbrainMonoNerdFontSemiBold; 
 
 }
 
@@ -33,4 +33,8 @@ h2{
    0 0 20px #ffd900, 0 0 30px #ffd900,0 0 40px #ffd900,0 0 55px #ffd900,0 0 75px #ffd900;
 color: #FFFFFF;
 background: #000000;
+}
+.Link {
+  color: #ffd900;
+font-family: JetbrainMonoNerdFontSemiBold; 
 }
