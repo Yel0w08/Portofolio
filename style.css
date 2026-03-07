@@ -6,6 +6,15 @@
   font-family: JetbrainMonoNerdFontBold; /* set name */
   src: url(assets/fonts/JetbrainMonoNerdFont/JetBrainsMonoNerdFontMono-Bold.ttf); /* url of the font */
 }
+
+@font-face {
+  font-family: ComicShannsMonoNerdFont; /* set name */
+  src: url(assets/fonts/ComicShannsMonoNerdFontMono-Regular.woff); /* url of the font */
+}
+@font-face {
+  font-family: JetbrainMonoNerdFontExtraBold; /* set name */
+  src: url(assets/fonts/JetbrainMonoNerdFont/JetBrainsMonoNerdFont-ExtraBold.ttf); /* url of the font */
+}
 @font-face {
   font-family: JetbrainMonoNerdFontSemiBold; /* set name */
   src: url(assets/fonts/JetbrainMonoNerdFont/JetBrainsMonoNerdFontMono-SemiBold.ttf); /* url of the font */
@@ -14,6 +23,8 @@
   font-family: JetbrainMonoNerdFontLight; /* set name */
   src: url(assets/fonts/JetbrainMonoNerdFont/JetBrainsMonoNerdFontMono-Light.ttf); /* url of the font */
 }
+
+
 body {
   background-color: #000000;
      color: #ffffff;
@@ -32,6 +43,8 @@ h2{
 
 }
 
+
+
 .TitleYellow {
   color: #ffd900;
   text-shadow: 0 0 5px #FFF, 0 0 10px #FFF, 0 0 15px #FFF,
@@ -43,8 +56,13 @@ background: #000000;
   color: #ffd900;
 font-family: JetbrainMonoNerdFontSemiBold; 
 underline: none;
+cursor: pointer;
 }
 
+.Helcursor
+{
+    cursor: help;
+}
 .warning {
   color: #ff0000;
   font-family: JetbrainMonoNerdFontBold;
@@ -58,3 +76,28 @@ underline: none;
   font-family: JetbrainMonoNerdFont;
 }
 
+
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #000000;
+}
+.navbutton {
+  color: #fffbe3;
+  font-family: JetbrainMonoNerdFontBold;
+  text-decoration: none;
+  padding: 10px 10px;
+  border-radius: 0px;
+  background-color: #000000;
+  box-shadow: none;
+}
+.navbutton :hover{
+  color: #ffe240;
+  font-family: JetbrainMonoNerdFontExtraBold;
+  text-decoration: none;
+  padding: 0px 0px;
+  cursor: pointer;
+}
