@@ -6,4 +6,6 @@
 
 [![My Skills](https://skillicons.dev/icons?i=bash,html,css,blender,cpp,cs,dotnet,godot,html,raspberrypi)](https://skillicons.dev)
 
-# pikmin team
+# PikminTea
+
+Domains : [Yel0w.fr](http://yel0w.fr/)
