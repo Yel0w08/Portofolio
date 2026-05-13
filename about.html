@@ -1,25 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<link rel="stylesheet" href="style.css">
-<meta charset="UTF-8">
-<title>Yel0w</title> 
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yel0w — About</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="assets/Images/WebSiteIcon.png">
 </head>
-
-<header>
-
-
-</header>
-
-<nav>
-    <a class="navbutton" href="index.html"><--</a>
-</nav>
 <body>
 
-<h1 class="TitleYellow">About Me</h1>
-<h4></h4>
-<p></p>
-<p class="aboutme">I'm sure someone will put something here.</p>
-<p class="aboutme">And also this website is still a wip, the main website is <a class="Link" href="https://yel0w.com">Yel0w.com</a></p>
+  <nav class="navbar">
+    <span class="nav-logo">./Yel0w</span>
+    <div class="nav-links">
+      <a class="navbutton" href="index.html">home</a>
+      <a class="navbutton active" href="about.html">about</a>
+      <a class="navbutton" href="https://github.com/Yel0w08" target="_blank">github</a>
+    </div>
+  </nav>
+
+  <main class="about-main">
+
+    <div class="about-header">
+      <div class="terminal-line"><span class="prompt">$</span> dog about_me.txt</div>
+      <h1 class="TitleYellow">About Me</h1>
+    </div>
+
+    <div class="about-grid">
+
+      <!-- Identity card -->
+      <div class="card identity-card">
+        <img
+          src="https://media.githubusercontent.com/media/Yel0w08/storage.archive.data/20daab6b10bb630755d78981a25bc19747c10a9c/Assets/Me/Images/PNGs/Pikmin_Wallpaper_Lily_3840x2160-circle.png"
+          alt="Yel0w avatar"
+          class="avatar"
+          onerror="this.style.display='none'"
+        />
+        <div class="identity-info">
+          <h2>Yel0w <span class="aka">aka Yel0w08</span></h2>
+          <p class="brand">🍵 pikmintea</p>
+          <p>Student &amp; developer</p>
+          <p>🇫🇷 France</p>
+        </div>
+      </div>
+
+      <!-- Skills -->
+      <div class="card">
+        <h3 class="card-title"><span class="prompt">></span> skills.json</h3>
+        <div class="skills-section">
+          <p class="skill-label">Learning</p>
+          <div class="skill-tags">
+            <span class="tag">HTML</span>
+            <span class="tag">CSS</span>
+            <span class="tag">JavaScript</span>
+          </div>
+          <p class="skill-label">Experienced</p>
+          <div class="skill-tags">
+            <span class="tag">C++</span>
+            <span class="tag">C#</span>
+          </div>
+          <p class="skill-label">Interests</p>
+          <div class="skill-tags">
+            <span class="tag tag-outline">Game Dev</span>
+            <span class="tag tag-outline">   <del>Web Dev</del> </span>
+            <span class="tag tag-outline">Cybersecurity</span>
+            <span class="tag tag-outline">Ethical Hacking</span>
+            <span class="tag tag-outline">Linux (I use <del>Arch</del> Fedora Btw) </span>
+            <span class="tag tag-outline">Self-hosting</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Projects -->
+      <div class="card">
+        <h3 class="card-title"><span class="prompt">></span> projects/</h3>
+        <div class="project-list">
+          <a class="project-item" href="https://github.com/Yel0w08/Portofolio" target="_blank">
+            <span class="project-name">📁 Portfolio</span>
+            <span class="project-desc">This website — yel0w.fr</span>
+          </a>
+          <a class="project-item" href="https://github.com/Yel0w08/Main" target="_blank">
+            <span class="project-name">📁 Main</span>
+            <span class="project-desc">Main website — yel0w.com</span>
+          </a>
+          <a class="project-item" href="https://github.com/Yel0w08" target="_blank">
+            <span class="project-name">📁 More on GitHub →</span>
+            <span class="project-desc">github.com/Yel0w08</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Links -->
+      <div class="card">
+        <h3 class="card-title"><span class="prompt">></span> links/</h3>
+        <div class="links-col">
+          <a class="Link pill" href="https://github.com/Yel0w08" target="_blank">GitHub</a>
+          <a class="Link pill" href="https://yel0w.com" target="_blank">Yel0w.com</a>
+          <a class="Link pill" href="https://yel0w.fr">Yel0w.fr</a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="terminal-line blink-line"><span class="prompt">$</span> <span class="cursor">█</span></div>
+
+  </main>
+
+  <footer class="footer">
+    <span>© 2026 Yel0w · <span class="tag-small">pikmintea</span></span>
+    <span class="wip-badge">⚠ WIP</span>
+  </footer>
+
 </body>
 </html>
