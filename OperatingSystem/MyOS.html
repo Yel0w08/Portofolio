@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>My Linux Journey</title>
+<style>
+:root{--bg:#0d0e10;--panel:#16181c;--line:#272a31;--text:#e6e8ec;--dim:#9096a3;--green:#5fd38d;--blue:#6aa9ff;--purple:#a58bff;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;background:var(--bg);color:var(--text);font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+.wrap{max-width:1100px;margin:0 auto;padding:0 20px 64px}
+header{padding:64px 0 28px}
+h1{font:700 clamp(2.4rem,7vw,4.2rem)/1.05 ui-monospace,"SF Mono",Menlo,Consolas,monospace;margin:0 0 14px;letter-spacing:-.02em}
+h1 span{color:var(--green)}
+.sub{color:var(--dim);font-size:1.15rem;margin:0;max-width:34em}
+.stats{display:flex;flex-wrap:wrap;gap:12px;margin:32px 0 0;padding:0;list-style:none}
+.stats li{flex:1 1 150px;background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:14px 18px}
+.stats b{display:block;font:700 2rem/1.1 ui-monospace,Menlo,Consolas,monospace;color:var(--green)}
+.stats li:nth-child(2) b{color:var(--blue)}.stats li:nth-child(3) b{color:var(--purple)}
+.stats small{color:var(--dim)}
+.timeline{margin:28px 0;padding:16px 20px;border-left:3px solid var(--purple);background:var(--panel);border-radius:0 10px 10px 0}
+.timeline h2{font-size:1.05rem;margin:0 0 4px}
+.timeline p{margin:0;color:var(--dim)}
+.tools{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin:8px 0 24px}
+.filters{display:flex;gap:6px}
+button{font:inherit;cursor:pointer}
+.filters button{background:none;color:var(--dim);border:1px solid var(--line);border-radius:999px;padding:6px 16px}
+.filters button[aria-pressed=true]{color:var(--bg);background:var(--green);border-color:var(--green);font-weight:600}
+input[type=search]{flex:1 1 220px;max-width:320px;background:var(--panel);color:var(--text);border:1px solid var(--line);border-radius:8px;padding:8px 12px;font:inherit}
+:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:16px}
+.card{display:flex;flex-direction:column;align-items:flex-start;gap:10px;text-align:left;color:inherit;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:20px}
+.card:hover{border-color:var(--c)}
+.logo{width:72px;height:72px;display:grid;place-items:center;flex:none}
+.logo img{max-width:100%;max-height:100%}
+.mono{width:100%;height:100%;border-radius:50%;display:grid;place-items:center;font:700 1.5rem ui-monospace,Menlo,monospace;color:#fff;background:var(--c);box-shadow:inset 0 0 0 3px rgba(255,255,255,.15)}
+.card h3{margin:0;font-size:1.2rem}
+.tag{font:.75rem ui-monospace,Menlo,monospace;border:1px solid currentColor;border-radius:4px;padding:1px 8px;color:var(--green)}
+.tag.bsd{color:var(--blue)}
+.card p{margin:0;color:var(--dim);font-size:.95rem}
+.empty{color:var(--dim);padding:32px 0}
+dialog{width:min(560px,calc(100% - 32px));max-height:calc(100% - 48px);background:var(--panel);color:var(--text);border:1px solid var(--line);border-radius:14px;padding:28px}
+dialog::backdrop{background:rgba(0,0,0,.7)}
+.close{position:absolute;top:10px;right:14px;background:none;border:0;color:var(--dim);font-size:1.6rem}
+.dhead{display:flex;gap:18px;align-items:center;margin-bottom:14px}
+.dhead .logo{width:88px;height:88px}
+.dhead h2{margin:0 0 6px;font-size:1.6rem}
+dl{display:grid;grid-template-columns:auto 1fr;gap:6px 16px;margin:16px 0;color:var(--dim)}
+dd{margin:0;color:var(--text)}
+.shots{display:flex;gap:8px;flex-wrap:wrap}.shots img{width:100%;max-width:240px;border-radius:8px;border:1px solid var(--line)}
+footer{color:var(--dim);text-align:center;padding:32px 20px;font-size:.9rem}
+@media (prefers-color-scheme:light){.x{}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <h1>My Linux <span>Journey</span></h1>
+  <p class="sub">Every distro I installed, broke, fixed, and eventually replaced.</p>
+  <ul class="stats" aria-label="Statistics">
+    <li><b id="nLinux">0</b><small>Linux distros</small></li>
+    <li><b id="nBsd">0</b><small>BSD systems</small></li>
+    <li><b id="nAll">0</b><small>Systems documented</small></li>
+  </ul>
+</header>
+
+<main>
+  <section class="timeline" aria-labelledby="tl">
+    <h2 id="tl">Timeline: Lost to the sands of time 🗿</h2>
+    <p>I don't remember exactly when I used each distro. I only remember that I used them.</p>
+  </section>
+
+  <section aria-label="Distro collection">
+    <div class="tools">
+      <div class="filters" role="group" aria-label="Filter by family">
+        <button type="button" data-f="All" aria-pressed="true">All</button>
+        <button type="button" data-f="Linux" aria-pressed="false">Linux</button>
+        <button type="button" data-f="BSD" aria-pressed="false">BSD</button>
+      </div>
+      <input type="search" id="q" placeholder="Search a distro…" aria-label="Search distros">
+    </div>
+    <div class="grid" id="grid"></div>
+    <p class="empty" id="empty" hidden>Nothing in the museum matches that.</p>
+  </section>
+</main>
+<footer>A small museum of operating systems. No dates, no order.</footer>
+</div>
+
+<dialog id="dlg" aria-labelledby="dTitle">
+  <button class="close" type="button" aria-label="Close" id="closeBtn">×</button>
+  <div id="dBody"></div>
+</dialog>
+
+<script>
+/* ===== EDIT YOUR DISTROS HERE =====
+   name, family ("Linux" | "BSD"), description, used (string),
+   rating (1-5 or null), notes (string or ""), screenshots (array of image paths),
+   logo (path/URL to an official logo, e.g. "logos/ubuntu.svg"; "" uses the fallback badge),
+   color (accent for the fallback badge), mark (1-2 letters in the fallback badge) */
+const DISTROS = [
+ {name:"Ubuntu",family:"Linux",description:"The classic first step. It just worked, until I touched it.",used:"Yes",rating:null,notes:"",screenshots:[],logo:"",color:"#e95420",mark:"U"},
+ {name:"Lubuntu",family:"Linux",description:"Ubuntu on a diet, for when the hardware was tired.",used:"Yes",rating:null,notes:"",screenshots:[],logo:"",color:"#0068c8",mark:"L"},
+ {name:"Ubuntu MATE",family:"Linux",description:"Familiar desktop, calm and traditional.",used:"Yes",rating:null,notes:"",screenshots:[],logo:"",color:"#87a556",mark:"M"},
+ {name:"Linux Mint",family:"Linux",description:"Friendly, polished, and hard to break on purpose.",used:"Yes",rating:null,notes:"",screenshots:[],logo:"",color:"#86be43",mark:"Mi"},
+ {name:"Fedora",family:"Linux",description:"Fresh packages and a taste of the cutting edge.",used:"Yes",rating:null,notes:"",screenshots:[],logo:"",color:"#3c6eb4",mark:"F"},
+ {name:"Arch Linux",family:"Linux",description:"I use Arch, by the wiki. Installed it, broke it, learned a lot.",used:"Yes",rating:null,notes:"",screenshots:[],logo:"",color:"#1793d1",mark:"A"},
+ {name:"Artix Linux",family:"Linux",description:"Arch, minus systemd.",used:"Yes",rating:null,notes:"",screenshots:[],logo:"",color:"#10a0cc",mark:"Ax"},
+ {name:"Cashy Linux",family:"Linux",description:"Fast and Arch-based.",used:"Yes",rating:null,notes:"Name uncertain. Probably CachyOS? Fix the name if so.",screenshots:[],logo:"",color:"#00a67e",mark:"C"},
+ {name:"AmongOS",family:"Linux",description:"A mysterious entry. Slightly suspicious.",used:"Yes",rating:null,notes:"Name uncertain. Edit once I remember what it really was.",screenshots:[],logo:"",color:"#c51111",mark:"Am"},
+ {name:"Other / Forgotten Distros",family:"Linux",description:"The ones I tried once and never wrote down.",used:"Yes",rating:null,notes:"Add names here as they come back to me.",screenshots:[],logo:"",color:"#7a7f8c",mark:"?"},
+ {name:"FreeBSD",family:"BSD",description:"The original daemon, solid and well documented.",used:"Yes",rating:null,notes:"",screenshots:[],logo:"",color:"#ab2b28",mark:"Fb"},
+ {name:"OpenBSD",family:"BSD",description:"Secure by default, with a very opinionated installer.",used:"Yes",rating:null,notes:"",screenshots:[],logo:"",color:"#f2ca30",mark:"Ob"},
+ {name:"GhostBSD",family:"BSD",description:"FreeBSD with a friendly desktop.",used:"Yes",rating:null,notes:"",screenshots:[],logo:"",color:"#6c5ce7",mark:"G"}
+];
+/* ===== END OF DATA ===== */
+
+const $=s=>document.querySelector(s);
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+let family="All";
+
+function logo(d){
+  const fb=`<div class="mono" aria-hidden="true">${esc(d.mark||d.name[0])}</div>`;
+  if(!d.logo) return `<div class="logo" style="--c:${esc(d.color)}">${fb}</div>`;
+  return `<div class="logo" style="--c:${esc(d.color)}"><img src="${esc(d.logo)}" alt="${esc(d.name)} logo" onerror="this.parentNode.innerHTML=this.parentNode.dataset.fb" ></div>`;
+}
+function logoEl(d){
+  const wrap=document.createElement("div");wrap.innerHTML=logo(d);
+  const el=wrap.firstElementChild;el.dataset.fb=`<div class="mono" aria-hidden="true">${esc(d.mark||d.name[0])}</div>`;return el;
+}
+function stars(r){return r?"★".repeat(r)+"☆".repeat(5-r):"Not rated"}
+
+function render(){
+  const q=$("#q").value.trim().toLowerCase();
+  const list=DISTROS.filter(d=>(family==="All"||d.family===family)&&d.name.toLowerCase().includes(q));
+  const grid=$("#grid");grid.innerHTML="";
+  list.forEach(d=>{
+    const b=document.createElement("button");b.type="button";b.className="card";b.style.setProperty("--c",d.color);
+    b.append(logoEl(d));
+    b.insertAdjacentHTML("beforeend",`<h3>${esc(d.name)}</h3><span class="tag ${d.family==="BSD"?"bsd":""}">${esc(d.family)}</span><p>${esc(d.description)}</p>`);
+    b.onclick=()=>openDetail(d);grid.append(b);
+  });
+  $("#empty").hidden=list.length>0;
+}
+function openDetail(d){
+  const body=$("#dBody");body.innerHTML="";
+  const head=document.createElement("div");head.className="dhead";
+  head.append(logoEl(d));
+  head.insertAdjacentHTML("beforeend",`<div><h2 id="dTitle">${esc(d.name)}</h2><span class="tag ${d.family==="BSD"?"bsd":""}">${esc(d.family)}</span></div>`);
+  body.append(head);
+  body.insertAdjacentHTML("beforeend",`<p>${esc(d.description)}</p><dl><dt>Used</dt><dd>${esc(d.used)}</dd><dt>Rating</dt><dd>${stars(d.rating)}</dd>${d.notes?`<dt>Notes</dt><dd>${esc(d.notes)}</dd>`:""}</dl>`);
+  if(d.screenshots&&d.screenshots.length) body.insertAdjacentHTML("beforeend",`<div class="shots">${d.screenshots.map(s=>`<img src="${esc(s)}" alt="${esc(d.name)} screenshot" loading="lazy">`).join("")}</div>`);
+  $("#dlg").showModal();
+}
+
+$("#nLinux").textContent=DISTROS.filter(d=>d.family==="Linux").length;
+$("#nBsd").textContent=DISTROS.filter(d=>d.family==="BSD").length;
+$("#nAll").textContent=DISTROS.length;
+document.querySelectorAll(".filters button").forEach(b=>b.onclick=()=>{
+  family=b.dataset.f;document.querySelectorAll(".filters button").forEach(x=>x.setAttribute("aria-pressed",x===b));render();
+});
+$("#q").addEventListener("input",render);
+$("#closeBtn").onclick=()=>$("#dlg").close();
+$("#dlg").addEventListener("click",e=>{if(e.target.id==="dlg")e.target.close()});
+render();
+</script>
+</body>
+</html>
