@@ -87,6 +87,10 @@ button:focus-visible {
   text-decoration: none;
 }
 
+.brand:hover {
+  color: var(--accent);
+}
+
 .nav {
   display: flex;
   flex-wrap: wrap;
@@ -115,7 +119,7 @@ button:focus-visible {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   gap: 1.25rem;
-  margin-top: 1rem;
+  margin-top: 1.25rem;
 }
 
 .tile {
@@ -124,12 +128,11 @@ button:focus-visible {
   border-radius: var(--radius);
   padding: clamp(1.3rem, 3vw, 2rem);
   box-shadow: var(--shadow);
-  scroll-margin-top: 1rem;
-  transition: transform 0.18s ease, box-shadow 0.18s ease;
+  scroll-margin-top: 1.5rem;
+  transition: box-shadow 0.18s ease;
 }
 
-.tile:hover {
-  transform: translateY(-4px);
+.tile:focus-within {
   box-shadow: var(--shadow-lift);
 }
 
@@ -138,7 +141,8 @@ button:focus-visible {
   align-items: center;
   gap: 0.6rem;
   margin: 0 0 1.1rem;
-  font-size: 1.15rem;
+  font-size: 1.2rem;
+  letter-spacing: -0.01em;
 }
 
 .tile h2::before {
@@ -190,6 +194,7 @@ button:focus-visible {
   font-size: clamp(3rem, 10vw, 5.5rem);
   line-height: 0.95;
   letter-spacing: -0.04em;
+  text-wrap: balance;
 }
 
 .tagline {
@@ -217,6 +222,8 @@ button:focus-visible {
   border-radius: 50%;
   object-fit: cover;
   background: var(--card);
+  border: 3px solid var(--card);
+  box-shadow: 0 4px 14px rgba(25, 26, 43, 0.18);
 }
 
 .identity h2 {
@@ -413,6 +420,7 @@ a.pill:hover {
   gap: 0.75rem 1rem;
   margin-top: 2.5rem;
   padding: 1.25rem 0 2.5rem;
+  border-top: 1px solid rgba(25, 26, 43, 0.08);
   font-size: 0.85rem;
   color: var(--muted);
 }
@@ -451,7 +459,6 @@ a.pill:hover {
     transition: none !important;
   }
 
-  .tile:hover,
   .nav a:hover,
   a.pill:hover,
   .project:hover,

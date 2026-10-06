@@ -1,0 +1,735 @@
+/* OS — the dedicated list page, minimal like V8.
+   black, white, boxes, geometry. */
+
+:root {
+  --bg: #000;
+  --ink: #fff;
+  --mut: #8f8f8f;
+  --line: rgba(255, 255, 255, 0.3);
+  --hair: rgba(255, 255, 255, 0.14);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: "Jost", ui-sans-serif, system-ui, sans-serif;
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 1.7;
+}
+
+::selection {
+  background: var(--ink);
+  color: var(--bg);
+}
+
+a {
+  color: inherit;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 1px solid var(--ink);
+  outline-offset: 3px;
+}
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0.75rem;
+  background: var(--ink);
+  color: var(--bg);
+  padding: 0.5rem 1rem;
+  font-size: 0.8rem;
+  z-index: 10;
+}
+
+.skip-link:focus {
+  left: 0.75rem;
+}
+
+/* ---------- fixed geometry layer ---------- */
+
+.geo {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.geo .line {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: var(--hair);
+}
+
+.geo .v1 {
+  left: 16%;
+}
+
+.geo .v2 {
+  right: 16%;
+}
+
+.geo .h {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 64%;
+  height: 1px;
+  background: var(--hair);
+}
+
+.geo .circle {
+  position: absolute;
+  width: 46vmax;
+  height: 46vmax;
+  right: -16vmax;
+  top: -18vmax;
+  border: 1px solid var(--hair);
+  border-radius: 50%;
+}
+
+.geo .c2 {
+  width: 34vmax;
+  height: 34vmax;
+  right: -10vmax;
+  top: -12vmax;
+}
+
+.geo .diamond {
+  position: absolute;
+  width: 30vmax;
+  height: 30vmax;
+  left: -14vmax;
+  bottom: -14vmax;
+  border: 1px solid var(--hair);
+  transform: rotate(45deg);
+}
+
+.geo .diag {
+  position: absolute;
+  width: 1px;
+  height: 75vmax;
+  left: 34%;
+  top: -15vmax;
+  background: var(--hair);
+  transform: rotate(34deg);
+  transform-origin: top center;
+}
+
+.geo .tri {
+  position: absolute;
+  left: 5%;
+  top: 14%;
+  width: 16vmax;
+  height: 16vmax;
+  color: var(--hair);
+}
+
+.geo .cross {
+  position: absolute;
+  width: 13px;
+  height: 13px;
+  transform: translate(-50%, -50%);
+  color: var(--line);
+  background:
+    linear-gradient(currentColor, currentColor) center / 100% 1px no-repeat,
+    linear-gradient(currentColor, currentColor) center / 1px 100% no-repeat;
+}
+
+.geo .x1 {
+  left: 16%;
+  top: 64%;
+}
+
+.geo .x2 {
+  left: 84%;
+  top: 64%;
+}
+
+.geo .x3 {
+  left: 50%;
+  top: 14%;
+}
+
+.geo .x4 {
+  left: 34%;
+  top: 82%;
+}
+
+.geo .dot {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--ink);
+  opacity: 0.75;
+}
+
+.geo .d1 {
+  left: 16%;
+  top: 30%;
+}
+
+.geo .d2 {
+  left: 84%;
+  top: 88%;
+}
+
+@media (max-width: 52rem) {
+  .geo .tri,
+  .geo .diag {
+    display: none;
+  }
+}
+
+/* ---------- page ---------- */
+
+.page {
+  position: relative;
+  z-index: 1;
+  max-width: 68rem;
+  margin: 0 auto;
+  padding: 0 clamp(1rem, 4vw, 2rem);
+}
+
+/* ---------- header ---------- */
+
+.top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 1.5rem 0;
+  border-bottom: 1px solid var(--hair);
+}
+
+.brand {
+  font-size: 0.8rem;
+  font-weight: 400;
+  letter-spacing: 0.4em;
+  text-decoration: none;
+}
+
+.top nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.top nav a {
+  border: 1px solid var(--line);
+  padding: 0.4rem 0.9rem;
+  font-size: 0.72rem;
+  letter-spacing: 0.15em;
+  text-decoration: none;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.top nav a:hover {
+  background: var(--ink);
+  color: var(--bg);
+}
+
+/* ---------- plates (boxes with corner crosses) ---------- */
+
+.box,
+.frame,
+.card {
+  position: relative;
+  border: 1px solid var(--line);
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.box {
+  padding: clamp(1.2rem, 3vw, 1.75rem);
+}
+
+.box::before,
+.frame::before,
+.card::before,
+.box::after,
+.frame::after,
+.card::after {
+  content: "";
+  position: absolute;
+  width: 11px;
+  height: 11px;
+  color: var(--ink);
+  background:
+    linear-gradient(currentColor, currentColor) center / 100% 1px no-repeat,
+    linear-gradient(currentColor, currentColor) center / 1px 100% no-repeat;
+}
+
+.box::before,
+.frame::before,
+.card::before {
+  top: -6px;
+  left: -6px;
+}
+
+.box::after,
+.frame::after,
+.card::after {
+  bottom: -6px;
+  right: -6px;
+}
+
+/* ---------- hero ---------- */
+
+.hero {
+  margin-top: clamp(2.5rem, 7vh, 4.5rem);
+}
+
+.frame {
+  padding: clamp(2rem, 6vw, 4rem);
+}
+
+.label {
+  margin: 0 0 1.4rem;
+  font-size: 0.68rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--mut);
+}
+
+.hero h1 {
+  margin: 0 0 1.2rem;
+  max-width: 16ch;
+  font-size: clamp(2.6rem, 9vw, 5.5rem);
+  font-weight: 300;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  text-wrap: balance;
+}
+
+.tagline {
+  margin: 0;
+  max-width: 52ch;
+  color: var(--mut);
+  font-size: 1.05rem;
+}
+
+/* ---------- stats ---------- */
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(9.5rem, 1fr));
+  gap: 0.9rem;
+  margin: 2.5rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.stats li {
+  position: relative;
+  border: 1px solid var(--line);
+  padding: 1.1rem 1.2rem;
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--mut);
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.stats li:hover {
+  background: var(--ink);
+  color: var(--bg);
+}
+
+.stats b {
+  display: block;
+  margin-bottom: 0.4rem;
+  font-size: clamp(2.2rem, 6vw, 3.4rem);
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+}
+
+.stats li:hover b {
+  color: var(--bg);
+}
+
+/* ---------- sections ---------- */
+
+.sec {
+  margin-top: clamp(3rem, 8vh, 5rem);
+  scroll-margin-top: 1.5rem;
+}
+
+.sec-head {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  margin-bottom: 1.25rem;
+}
+
+.sec-head .num {
+  font-size: 0.68rem;
+  letter-spacing: 0.25em;
+  color: var(--mut);
+}
+
+.sec-head h2 {
+  margin: 0;
+  font-size: 0.68rem;
+  font-weight: 400;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+}
+
+.sec-head::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--hair);
+}
+
+.note p {
+  margin: 0 0 0.8rem;
+  color: var(--mut);
+}
+
+.note p:last-child {
+  margin-bottom: 0;
+}
+
+/* ---------- tools ---------- */
+
+.tools {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+  margin-bottom: 1.35rem;
+}
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.filters button {
+  border: 1px solid var(--line);
+  background: transparent;
+  color: var(--ink);
+  font: inherit;
+  font-size: 0.72rem;
+  font-weight: 400;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 0.5rem 1.05rem;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.filters button:hover,
+.filters button[aria-pressed="true"] {
+  background: var(--ink);
+  color: var(--bg);
+}
+
+#q {
+  width: min(100%, 17rem);
+  border: 1px solid var(--line);
+  background: transparent;
+  color: var(--ink);
+  font: inherit;
+  font-size: 0.85rem;
+  padding: 0.55rem 1rem;
+}
+
+#q::placeholder {
+  color: var(--mut);
+}
+
+#q:focus {
+  outline: none;
+  border-color: var(--ink);
+}
+
+/* ---------- grid + cards ---------- */
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(14.5rem, 1fr));
+  gap: 1rem;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  width: 100%;
+  padding: clamp(1.1rem, 2.5vw, 1.5rem);
+  background: var(--bg);
+  color: inherit;
+  font: inherit;
+  font-size: 15px;
+  text-align: left;
+  cursor: pointer;
+}
+
+.card:hover {
+  background: var(--ink);
+  color: var(--bg);
+}
+
+.card .logo {
+  height: 56px;
+  width: 56px;
+  object-fit: contain;
+}
+
+.card h3 {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.tags span {
+  display: inline-block;
+  padding: 0.12rem 0.6rem;
+  border: 1px solid var(--line);
+  font-size: 0.64rem;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--mut);
+}
+
+.tags .fam {
+  color: var(--ink);
+}
+
+.card:hover .tags span {
+  border-color: rgba(0, 0, 0, 0.4);
+  color: #555;
+}
+
+.card:hover .tags .fam {
+  color: #000;
+}
+
+.card .desc {
+  margin: 0;
+  font-size: 0.87rem;
+  line-height: 1.6;
+  color: var(--mut);
+}
+
+.card:hover .desc {
+  color: #444;
+}
+
+.card .rating {
+  margin-top: auto;
+  padding-top: 0.7rem;
+  border-top: 1px dashed var(--line);
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: var(--ink);
+}
+
+.card:hover .rating {
+  border-top-color: rgba(0, 0, 0, 0.35);
+  color: #000;
+}
+
+.empty {
+  margin-top: 1.35rem;
+  padding: 2rem;
+  border: 1px dashed var(--line);
+  text-align: center;
+  letter-spacing: 0.1em;
+  color: var(--mut);
+}
+
+.empty[hidden] {
+  display: none;
+}
+
+/* ---------- dialog ---------- */
+
+dialog {
+  position: fixed;
+  width: min(92vw, 40rem);
+  max-height: 85vh;
+  margin: auto;
+  padding: clamp(1.5rem, 4vw, 2.25rem);
+  background: var(--bg);
+  color: var(--ink);
+  border: 1px solid var(--ink);
+}
+
+dialog::before,
+dialog::after {
+  content: "";
+  position: absolute;
+  width: 11px;
+  height: 11px;
+  color: var(--ink);
+  background:
+    linear-gradient(currentColor, currentColor) center / 100% 1px no-repeat,
+    linear-gradient(currentColor, currentColor) center / 1px 100% no-repeat;
+}
+
+dialog::before {
+  top: -6px;
+  left: -6px;
+}
+
+dialog::after {
+  bottom: -6px;
+  right: -6px;
+}
+
+dialog::backdrop {
+  background: rgba(0, 0, 0, 0.78);
+}
+
+dialog .close {
+  position: absolute;
+  top: 0.9rem;
+  right: 0.9rem;
+  width: 2.1rem;
+  height: 2.1rem;
+  border: 1px solid var(--line);
+  background: transparent;
+  color: var(--ink);
+  font-size: 1.1rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+dialog .close:hover {
+  background: var(--ink);
+  color: var(--bg);
+}
+
+.dhead {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.dhead .logo {
+  width: 96px;
+  height: 96px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.dinfo h2 {
+  margin: 0 0 0.5rem;
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+
+.ddesc {
+  margin: 1.25rem 0 0;
+  color: var(--mut);
+}
+
+dialog dl {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.5rem 1.25rem;
+  margin: 1.25rem 0 0;
+}
+
+dialog dt {
+  font-size: 0.66rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--mut);
+}
+
+dialog dd {
+  margin: 0;
+  font-size: 0.92rem;
+}
+
+.shots {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.25rem;
+}
+
+.shots img {
+  width: min(100%, 15rem);
+  border: 1px solid var(--line);
+}
+
+/* ---------- footer ---------- */
+
+.foot {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.75rem 1rem;
+  margin-top: clamp(3rem, 8vh, 5rem);
+  padding: 1.5rem 0 2.5rem;
+  border-top: 1px solid var(--hair);
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  color: var(--mut);
+}
+
+.foot .wip {
+  color: var(--ink);
+}
+
+/* ---------- small screens ---------- */
+
+@media (max-width: 40rem) {
+  .tools {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  #q {
+    width: 100%;
+  }
+
+  .dhead {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  * {
+    transition: none !important;
+  }
+}

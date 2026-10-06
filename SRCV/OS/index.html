@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The OSs — Yel0w</title>
+  <meta name="description" content="List of the OS i used.">
+  <meta name="theme-color" content="#000000">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23000'/%3E%3Ctext x='16' y='24' font-family='monospace' font-size='24' font-weight='bold' text-anchor='middle' fill='%23fff'%3EY%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <a class="skip-link" href="#main">skip to content</a>
+
+  <div class="geo" aria-hidden="true">
+    <span class="line v1"></span>
+    <span class="line v2"></span>
+    <span class="h"></span>
+    <span class="circle"></span>
+    <span class="circle c2"></span>
+    <span class="diamond"></span>
+    <span class="diag"></span>
+    <svg class="tri" viewBox="0 0 100 100" fill="none">
+      <polygon points="50,8 92,92 8,92" stroke="currentColor" stroke-width="1" />
+    </svg>
+    <span class="cross x1"></span>
+    <span class="cross x2"></span>
+    <span class="cross x3"></span>
+    <span class="cross x4"></span>
+    <span class="dot d1"></span>
+    <span class="dot d2"></span>
+  </div>
+
+  <div class="page">
+
+    <header class="top">
+      <a class="brand" href="../../index.html">YEL0W</a>
+      <nav aria-label="main">
+        <a href="../../index.html">home</a>
+        <a href="../../Versions.html">versions</a>
+        <a href="https://yel0w.fr/OS/">yel0w.fr/OS/</a>
+        <a href="https://github.com/Yel0w08">github</a>
+      </nav>
+    </header>
+
+    <main id="main">
+
+      <section class="hero frame">
+        <p class="label">./Yel0w.fr - OS</p>
+        <h1>List of the OS i used</h1>
+        <p class="tagline">Most of the Operatin system thath i used.</p>
+
+        <ul class="stats">
+          <li><b id="nLinux">0</b> Linux distros</li>
+          <li><b id="nBsd">0</b> BSD systems</li>
+          <li><b id="nMs">0</b> Microsoft systems</li>
+          <li><b id="nAll">0</b> documented</li>
+        </ul>
+      </section>
+
+      <section class="sec" id="note">
+        <div class="sec-head">
+          <span class="num">01</span>
+          <h2>Note</h2>
+        </div>
+        <div class="box note">
+          <p>If you wonder why Microsoft is called Microslop, You know but i mean 1/2 windows was trash.</p>
+          <p>So just to clarify All windows in my list are ecluded ffrom microslop exept win11.</p>
+        </div>
+      </section>
+
+      <section class="sec" id="list">
+        <div class="sec-head">
+          <span class="num">02</span>
+          <h2>The list</h2>
+        </div>
+
+        <div class="tools">
+          <div class="filters">
+            <button type="button" data-f="All" aria-pressed="true">All</button>
+            <button type="button" data-f="Linux" aria-pressed="false">Linux</button>
+            <button type="button" data-f="BSD" aria-pressed="false">BSD</button>
+            <button type="button" data-f="Microsoft" aria-pressed="false">Microslop</button>
+          </div>
+          <input type="search" id="q" placeholder="... write somting here" aria-label="Search">
+        </div>
+
+        <div class="grid" id="grid"></div>
+        <p class="empty" id="empty" hidden>Nothing matches that.</p>
+      </section>
+
+    </main>
+
+    <footer class="foot">
+      <span>&copy; 2026 Yel0w · pikmintea</span>
+      <span class="wip">⚠ WIP - OS</span>
+    </footer>
+
+  </div>
+
+  <dialog id="dlg">
+    <button class="close" type="button" aria-label="Close" id="closeBtn">&times;</button>
+    <div id="dBody"></div>
+  </dialog>
+
+  <script src="../../assets/Images/operating-system-logos/data.js"></script>
+  <script src="../../assets/Images/operating-system-logos/render.js"></script>
+</body>
+</html>
