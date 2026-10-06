@@ -1,0 +1,3 @@
+[submodule "OS/operating-system-logos"]
+	path = OS/operating-system-logos
+	url = https://github.com/ngeenx/operating-system-logos
