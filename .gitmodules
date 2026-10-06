@@ -1,3 +1,6 @@
 [submodule "OS/operating-system-logos"]
 	path = OS/operating-system-logos
 	url = https://github.com/ngeenx/operating-system-logos
+[submodule "assets/Images/operating-system-logos"]
+	path = assets/Images/operating-system-logos
+	url = https://github.com/ngeenx/operating-system-logos

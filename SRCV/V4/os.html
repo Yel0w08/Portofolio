@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The OSs — Yel0w</title>
+  <meta name="description" content="List of the OS i used.">
+  <meta name="theme-color" content="#131210">
+  <link rel="icon" type="image/png" href="../../assets/Images/WebSiteIcon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;700;800;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body id="top">
+
+  <a class="skip" href="#main">skip to content</a>
+
+  <header class="top">
+    <a class="brand" href="index.html">Yel0w<span class="slash">/</span></a>
+    <nav aria-label="main">
+      <a href="index.html#about">about</a>
+      <a href="index.html#skills">skills</a>
+      <a href="index.html#work">projects</a>
+      <a href="index.html#contact">contact</a>
+      <a href="os.html" aria-current="page">os</a>
+      <a href="https://github.com/Yel0w08">github</a>
+    </nav>
+  </header>
+
+  <main id="main">
+
+    <p class="eyebrow"><span class="dot"></span>yel0w.fr / os</p>
+    <h1 class="os-title">The OSs</h1>
+    <p class="intro">List of the OS i used. Most of the Operatin system thath i used.</p>
+
+    <ul class="stats">
+      <li><b id="nLinux">0</b> Linux distros</li>
+      <li><b id="nBsd">0</b> BSD systems</li>
+      <li><b id="nMs">0</b> Microsoft systems</li>
+      <li><b id="nAll">0</b> documented</li>
+    </ul>
+
+    <section class="block">
+      <header class="block-head">
+        <span class="num">01</span>
+        <h2>note</h2>
+      </header>
+      <div class="note">
+        <p>If you wonder why Microsoft is called Microslop, You know but i mean 1/2 windows was trash.</p>
+        <p>So just to clarify All windows in my list are ecluded ffrom microslop exept win11.</p>
+      </div>
+    </section>
+
+    <section class="block">
+      <header class="block-head">
+        <span class="num">02</span>
+        <h2>the list</h2>
+      </header>
+
+      <div class="tools">
+        <div class="filters">
+          <button type="button" data-f="All" aria-pressed="true">All</button>
+          <button type="button" data-f="Linux" aria-pressed="false">Linux</button>
+          <button type="button" data-f="BSD" aria-pressed="false">BSD</button>
+          <button type="button" data-f="Microsoft" aria-pressed="false">Microslop</button>
+        </div>
+        <input type="search" id="q" placeholder="... write somting here" aria-label="Search">
+      </div>
+
+      <div class="grid" id="grid"></div>
+      <p class="empty" id="empty" hidden>Nothing matches that.</p>
+    </section>
+
+  </main>
+
+  <footer>
+    <span>&copy; 2026 Yel0w · pikmintea</span>
+    <span>⚠ WIP — V4</span>
+    <span>html, css &amp; a bit of js</span>
+    <a href="#top">back to top</a>
+  </footer>
+
+  <dialog id="dlg">
+    <button class="close" type="button" aria-label="Close" id="closeBtn">&times;</button>
+    <div id="dBody"></div>
+  </dialog>
+
+  <script src="../../assets/Images/operating-system-logos/data.js"></script>
+  <script src="../../assets/Images/operating-system-logos/render.js"></script>
+</body>
+</html>

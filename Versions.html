@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yel0w — Versions</title>
+    <meta name="description" content="Every version of yel0w.fr, oldest first.">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23f5d21c'/%3E%3Ctext x='16' y='24' font-family='monospace' font-size='24' font-weight='bold' text-anchor='middle' fill='%23131210'%3EY%3C/text%3E%3C/svg%3E">
+    <style>
+      :root {
+        --bg: #131210;
+        --ink: #f2ecdd;
+        --muted: #98917f;
+        --yellow: #f5d21c;
+        --line: rgba(242, 236, 221, 0.2);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0 auto;
+        max-width: 44rem;
+        padding: 0 1.25rem 2.5rem;
+        background: var(--bg);
+        color: var(--ink);
+        font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+        font-size: 16px;
+        line-height: 1.6;
+      }
+
+      ::selection {
+        background: var(--yellow);
+        color: var(--bg);
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      a:focus-visible {
+        outline: 3px solid var(--yellow);
+        outline-offset: 2px;
+      }
+
+      header {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: baseline;
+        gap: 0.5rem 1rem;
+        padding: 1.1rem 0;
+        border-bottom: 2px solid var(--ink);
+      }
+
+      .brand {
+        font-weight: 700;
+      }
+
+      .brand span {
+        color: var(--yellow);
+      }
+
+      .where {
+        font-size: 0.75rem;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--muted);
+      }
+
+      main {
+        padding-top: 3rem;
+      }
+
+      h1 {
+        margin: 0;
+        font-size: clamp(2.2rem, 9vw, 3.4rem);
+        line-height: 1;
+        letter-spacing: -0.03em;
+        color: var(--yellow);
+      }
+
+      .lead {
+        margin: 0.8rem 0 2.25rem;
+        max-width: 46ch;
+        color: var(--muted);
+      }
+
+      .list {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        border-top: 2px solid var(--ink);
+      }
+
+      .row {
+        display: grid;
+        grid-template-columns: 3.5rem 1fr auto auto;
+        align-items: center;
+        gap: 1rem;
+        padding: 0.85rem 0.4rem;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .v {
+        font-weight: 700;
+        color: var(--yellow);
+      }
+
+      .badge {
+        padding: 0.15rem 0.5rem;
+        border: 1px solid var(--line);
+        font-size: 0.68rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--muted);
+        white-space: nowrap;
+      }
+
+      .badge.live {
+        background: var(--yellow);
+        border-color: var(--yellow);
+        color: var(--bg);
+      }
+
+      .badge.ai {
+        border-color: var(--yellow);
+        color: var(--yellow);
+        letter-spacing: 0.14em;
+      }
+
+      .arrow {
+        color: var(--muted);
+      }
+
+      .off {
+        color: var(--muted);
+      }
+
+      .off .v {
+        color: var(--muted);
+      }
+
+      .off .name {
+        text-decoration: line-through;
+        text-decoration-thickness: 2px;
+      }
+
+      a.row:hover {
+        background: var(--yellow);
+        color: var(--bg);
+      }
+
+      a.row:hover .v,
+      a.row:hover .name,
+      a.row:hover .arrow,
+      a.row:hover .badge {
+        color: var(--bg);
+        border-color: var(--bg);
+      }
+
+      a.row:hover .badge.live {
+        background: var(--bg);
+        color: var(--yellow);
+      }
+
+      footer {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 0.75rem 1rem;
+        margin-top: 2.5rem;
+        padding-top: 0.9rem;
+        border-top: 2px solid var(--ink);
+        font-size: 0.78rem;
+        color: var(--muted);
+      }
+
+      footer a:hover {
+        color: var(--yellow);
+      }
+
+      @media (max-width: 30rem) {
+        .row {
+          grid-template-columns: 3rem 1fr auto;
+          gap: 0.5rem 0.75rem;
+        }
+
+        .arrow {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <a class="brand" href="./">Yel0w<span>/</span></a>
+      <span class="where">versions</span>
+    </header>
+
+    <main>
+      <h1>Versions</h1>
+      <p class="lead">V E R S I O N S</p>
+
+      <ol class="list">
+        <li class="row off">
+          <span class="v">V0</span>
+          <span class="name">REDACTED</span>
+          <span class="badge">redacted</span>
+        </li>
+        <li class="row off">
+          <span class="v">V1</span>
+          <span class="name">REDACTED</span>
+          <span class="badge">redacted</span>
+        </li>
+        <li>
+          <a class="row" href="./index.html">
+            <span class="v">V2</span>
+            <span class="name">Current Default</span>
+            <span class="badge live">live</span>
+            <span class="arrow" aria-hidden="true">&rarr;</span>
+          </a>
+        </li>
+        <li>
+          <a class="row" href="SRCV/V3/index.html">
+            <span class="v">V3</span>
+            <span class="name">PAPAER terminal</span>
+            <span class="badge">preview</span>
+            <span class="arrow" aria-hidden="true">&rarr;</span>
+          </a>
+        </li>
+        <li>
+          <a class="row" href="SRCV/V4/index.html">
+            <span class="v">V4</span>
+            <span class="name">Cool edition</span>
+            <span class="badge ai">AI</span>
+            <span class="arrow" aria-hidden="true">&rarr;</span>
+          </a>
+        </li>
+        <li>
+          <a class="row" href="SRCV/V5/index.html">
+            <span class="v">V5</span>
+            <span class="name">Pro edition</span>
+            <span class="badge ai">AI</span>
+            <span class="arrow" aria-hidden="true">&rarr;</span>
+          </a>
+        </li>
+        <li>
+          <a class="row" href="SRCV/V6/index.html">
+            <span class="v">V6</span>
+            <span class="name">Bento edition</span>
+            <span class="badge ai">AI</span>
+            <span class="arrow" aria-hidden="true">&rarr;</span>
+          </a>
+        </li>
+        <li>
+          <a class="row" href="SRCV/V7/index.html">
+            <span class="v">V7</span>
+            <span class="name">Artix edition</span>
+            <span class="badge ai">AI</span>
+            <span class="arrow" aria-hidden="true">&rarr;</span>
+          </a>
+        </li>
+      </ol>
+    </main>
+
+    <footer>
+      <span>&copy; 2026 Yel0w · pikmintea</span>
+      <a href="./">Return;</a>
+    </footer>
+  </body>
+</html>
