@@ -14,7 +14,7 @@ const DISTROS = [
   {name:"AmongOS", family:"Linux", logo:"logos/amongos.svg", description:"A sussy impostor.", used:"SUS", rating:"Yes", notes:"Installed on a rasberi pi.", screenshots:[]},
   {name:"Other / Forgotten Distros", family:"Linux", logo:"logos/other.svg", description:"The OS i forgor like debian and at least 3 other.", used:"Yes", rating:null, notes:"i was too lazy to get all the otehr distro logos", screenshots:[]},
   {name:"FreeBSD", family:"BSD", logo:"logos/freebsd.svg", description:"Its the default BSD!", used:"Yes", rating:null, notes:"", screenshots:[]},
-  {name:"OpenBSD", family:"BSD", logo:"logos/openbsd.svg", description:"SECURITYYYYYYYYYYYYYYYYYY.", used:"Yes", rating:null, notes:"", screenshots:[]},
+  {name:"OpenBSD", family:"BSD", logo:"logos/openbsd.svg", description:"SECURITYYYYYYYYYYYYY.", used:"Yes", rating:null, notes:"", screenshots:[]},
   {name:"GhostBSD", family:"BSD", logo:"logos/ghostbsd.svg", description:"FreeBSD with a XFCE desktop.", used:"Yes", rating:null, notes:"", screenshots:[]},
   {name:"MS-DOS", family:"Microsoft", logo:"logos/msdos.svg", description:"Just a prompt and a blinking cursor.", used:"Yes", rating:null, notes:"No official logo, using a simple icon.", screenshots:[]},
   {name:"Windows 95", family:"Microsoft", logo:"logos/windows95.svg", description:"Can run 16Bits Softs and just basicely and app for DOS.", used:"Yes", rating:null, notes:"Simplified flag icon, not the official artwork.", screenshots:[]},
