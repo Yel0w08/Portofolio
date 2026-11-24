@@ -1,60 +1,62 @@
 <!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Yel0w</title>
-        <link rel="stylesheet" href="style.css" />
-        <link rel="icon" href="assets/Images/WebSiteIcon.png" />
-        <script src="script.js" defer></script>
-    </head>
-    <body>
-        <nav class="navbar">
-            <span class="nav-logo">./Yel0w.fr - Home Page</span>
-            <div class="nav-links">
-                <a class="navbutton active" href="index.html">home</a>
-                <a class="navbutton" href="about.html">about</a>
-                <a
-                    class="navbutton"
-                    href="https://github.com/Yel0w08"
-                    target="_blank"
-                    >github</a
-                >
-            </div>
-        </nav>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yel0w</title>
+  <meta name="description" content="Portfolio of Yel0w, a student and developer working with C++, C# and Java.">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="assets/Images/WebSiteIcon.png">
+  <script src="script.js" defer></script>
+</head>
+<body>
 
-        <main class="hero">
-            <div class="hero-content">
-                <div class="terminal-line">
-                    <span class="prompt">$</span> whoami
-                </div>
-                <h1 class="TitleYellow">Yel0w</h1>
-                <div class="terminal-line">
-                    <span class="prompt">$</span> dog about.md
-                </div>
-                <div class="AboutMeHome">
-                    <p>
-                        Student &amp; developer. I like to code, make
-                        programs.
-                    </p>
-                    <p>
-                        Currently learning <span class="tag">Java</span>
-                        <span class="tag">Nuclear Science </span> — also experienced with
-                        <span class="tag">C++</span>          <span class="tag">C#</span>          <span class="tag">HTML</span>
-                    </p>
-                    <p>
-                        Interested in <span class="highlight">Nuclear Science</span>,
-                        <span class="highlight"><s>web</s> dev</span>,
-                        <span class="highlight">Low Level dev</span> and
-                        <span class="highlight">Cybercecurity</span>.
-                    </p>
-                </div>
+  <header class="nav">
+    <div class="wrap">
+      <a class="logo" href="index.html">yel0w</a>
+      <nav aria-label="Main">
+        <ul>
+          <li><a href="index.html" aria-current="page">home</a></li>
+          <li><a href="about.html">about</a></li>
+          <li><a href="Contact.html">contact</a></li>
+          <li><a href="https://github.com/Yel0w08" target="_blank" rel="noopener noreferrer">github</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-        </main>
+  <main class="wrap hero">
+    <p class="cmd"><i>$</i><span>whoami</span></p>
 
-        <footer class="footer">
-            <span>© 2026 Yel0w · <span class="tag-small">pikmintea</span></span>
-            <span class="wip-badge">⚠ WIP - V2</span>
-        </footer>
-    </body>
+    <div class="reveal">
+      <h1>Yel0w</h1>
+      <p class="lead">Student &amp; developer. I like to code and build programs.</p>
+
+      <dl class="rows">
+        <div>
+          <dt>Currently learning</dt>
+          <dd class="tags"><span class="tag tag-now">Java</span><span class="tag tag-now">Nuclear Science</span></dd>
+        </div>
+        <div>
+          <dt>Experienced with</dt>
+          <dd class="tags"><span class="tag">C++</span><span class="tag">C#</span><span class="tag">HTML</span></dd>
+        </div>
+        <div>
+          <dt>Interested in</dt>
+          <dd class="tags"><span class="tag">Nuclear Science</span><span class="tag"><s>web</s> dev</span><span class="tag">Low-level dev</span><span class="tag">Cybersecurity</span></dd>
+        </div>
+      </dl>
+
+      <p class="more"><a class="link" href="about.html">More about me</a> or <a class="link" href="Contact.html">get in touch</a>.</p>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <span>© 2026 Yel0w (<b>pikmintea</b>)</span>
+      <span class="wip">WIP v2</span>
+    </div>
+  </footer>
+
+</body>
 </html>

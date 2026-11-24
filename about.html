@@ -3,112 +3,101 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Yel0w — About</title>
+  <title>About  Yel0w's Portfolio</title>
+  <meta name="description" content="About Me: ">
   <link rel="stylesheet" href="style.css">
   <link rel="icon" href="assets/Images/WebSiteIcon.png">
 </head>
 <body>
 
-  <nav class="navbar">
-    <span class="nav-logo">./AboutMe.sh</span>
-    <div class="nav-links">
-      <a class="navbutton" href="index.html">home</a>
-      <a class="navbutton active" href="about.html">about</a>
-      <a class="navbutton" href="https://github.com/Yel0w08" target="_blank">github</a>
+  <header class="nav">
+    <div class="wrap">
+      <a class="logo" href="index.html">yel0w</a>
+      <nav aria-label="Main">
+        <ul>
+          <li><a href="index.html">home</a></li>
+          <li><a href="about.html" aria-current="page">about</a></li>
+          <li><a href="Contact.html">contact</a></li>
+          <li><a href="https://github.com/Yel0w08" target="_blank" rel="noopener noreferrer">github</a></li>
+        </ul>
+      </nav>
     </div>
-  </nav>
+  </header>
 
-  <main class="about-main">
+  <main class="wrap">
 
-    <div class="about-header">
-      <h1 class="TitleYellow">About Mii</h1>
-    </div>
-
-    <div class="about-grid">
-
-
-      <div class="card identity-card">
-        <img
-          src="https://media.githubusercontent.com/media/Yel0w08/storage.archive.data/20daab6b10bb630755d78981a25bc19747c10a9c/Assets/Me/Images/PNGs/Pikmin_Wallpaper_Lily_3840x2160-circle.png"
-          alt="Yel0w avatar"
-          class="avatar"
-          onerror="this.style.display='none'"
-        />
-        <div class="identity-info">
-          <h2>Yel0w <span class="aka">aka Yel0w08</span></h2>
-          <p class="brand">pikmintea</p>
-          <p>Student &amp; developer</p>
+    <header class="page">
+      <h1>About me</h1>
+      <div class="who">
+        <img class="avatar" src="https://media.githubusercontent.com/media/Yel0w08/storage.archive.data/20daab6b10bb630755d78981a25bc19747c10a9c/Assets/Me/Images/PNGs/Pikmin_Wallpaper_Lily_3840x2160-circle.png" alt="Yel0w's avatar" width="72" height="72" onerror="this.style.display='none'">
+        <div>
+          <b>Yel0w <span>aka Yel0w08</span></b>
+          <span>backend developer</span>
         </div>
       </div>
+    </header>
 
-
-      <div class="card">
-        <h3 class="card-title"><span class="prompt">></span> skills.txt</h3>
-        <div class="skills-section">
-          <p class="skill-label">Learning</p>
-          <div class="skill-tags">
+    <section>
+      <h2>skills.txt</h2>
+      <dl class="rows">
+        <div>
+                 <div>
+          <dt>Skills</dt>
+          <dd class="tags"><span class="tag">C++</span><span class="tag">C#</span><span class="tag">Linux systems</span>  <dt>Learning</dt>
+          <dd class="tags"><span class="tag tag-now">Nuclear Science</span><span class="tag tag-now">Java</span><span class="tag tag-now">Dutch</span></dd>
+        </div>
+</dd>
+        </div>
+        <div>
+          <dt>Interests</dt>
+          <dd class="tags">
+            <span class="tag">Game dev</span>
+            <span class="tag"><del>Web dev</del></span>
+            <span class="tag">Cybersecurity</span>
+            <span class="tag">Ethical hacking</span>
+            <span class="tag">Linux (I use <del>Arch</del> btw)</span>
+            <span class="tag">Self-hosting</span>
             <span class="tag">Nuclear Science</span>
-            <span class="tag">Java</span>
-            <span class="tag">Dutch</span>
-          </div>
-          <p class="skill-label">Experienced</p>
-          <div class="skill-tags">
-            <span class="tag">C++</span>
-            <span class="tag">C#</span>
-             <span class="tag">Linux Systems</span>
-            
-          </div>
-          <p class="skill-label">Interests</p>
-          <div class="skill-tags">
-            <span class="tag tag-outline">Game Dev</span>
-            <span class="tag tag-outline">   <del>Web Dev</del> </span>
-            <span class="tag tag-outline">Cybersecurity</span>
-            <span class="tag tag-outline">Ethical Hacking</span>
-            <span class="tag tag-outline">Linux (I use <del>Arch</del> Btw) </span>
-            <span class="tag tag-outline">Self-hosting</span>
-              <span class="tag tag-outline">Nuclear Science ⚛</span>
-          </div>
+          </dd>
         </div>
+      </dl>
+    </section>
+
+    <section>
+      <h2>projects/</h2>
+      <div>
+        <a class="proj" href="https://github.com/Yel0w08/Portofolio" target="_blank" rel="noopener noreferrer">
+          <b>Portfolio</b><small>This website, yel0w.fr</small>
+        </a>
+        <a class="proj" href="https://github.com/Yel0w08/Main" target="_blank" rel="noopener noreferrer">
+          <b>Main</b><small>Main website, yel0w.com</small>
+        </a>
+        <a class="proj" href="https://github.com/Yel0w08" target="_blank" rel="noopener noreferrer">
+          <b>More on GitHub</b><small>github.com/Yel0w08</small>
+        </a>
       </div>
+    </section>
 
-
-      <div class="card">
-        <h3 class="card-title"><span class="prompt">></span> projects/</h3>
-        <div class="project-list">
-          <a class="project-item" href="https://github.com/Yel0w08/Portofolio" target="_blank">
-            <span class="project-name">📁 Portfolio</span>
-            <span class="project-desc">This website — yel0w.fr</span>
-          </a>
-          <a class="project-item" href="https://github.com/Yel0w08/Main" target="_blank">
-            <span class="project-name">📁 Main</span>
-            <span class="project-desc">Main website — yel0w.com</span>
-          </a>
-          <a class="project-item" href="https://github.com/Yel0w08" target="_blank">
-            <span class="project-name">📁 More on GitHub →</span>
-            <span class="project-desc">github.com/Yel0w08</span>
-          </a>
-        </div>
+    <section>
+      <h2>links/</h2>
+      <div class="tags">
+        <a class="tag" href="https://github.com/Yel0w08" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a class="tag" href="https://yel0w.com" target="_blank" rel="noopener noreferrer">Yel0w.com</a>
+        <a class="tag" href="https://yel0w.fr">Yel0w.fr</a>
+        <a class="tag" href="https://matrix.to/#/@yel0w08:matrix.org" target="_blank" rel="noopener noreferrer">Matrix</a>
+        <a class="tag" href="xmpp:Yel0w@xmpp.xyz">XMPP main</a>
+        <a class="tag" href="xmpp:Yel0w@jabb.im">XMPP backup</a>
       </div>
+    </section>
 
-      <div class="card">
-        <h3 class="card-title"><span class="prompt">></span> links/</h3>
-        <div class="links-col">
-          <a class="Link pill" href="https://github.com/Yel0w08" target="_blank">GitHub</a>
-          <a class="Link pill" href="https://yel0w.com" target="_blank">Yel0w.com</a>
-          <a class="Link pill" href="https://yel0w.fr">Yel0w.fr</a>
-          <a class="Link pill"href="https://matrix.to/#/@yel0w08:matrix.org"target="_blank"rel="noopener noreferrer">Matrix</a>
-          <a class="Link pill" href="xmpp:Yel0w@xmpp.xyz">XMPP · Main</a>
-          <a class="Link pill" href="xmpp:Yel0w@jabb.im">XMPP · Backup</a>
-        </div>
-      </div>
-
-    </div>
   </main>
 
   <footer class="footer">
-    <span>© 2026 Yel0w · <span class="tag-small">Yel0w08</span></span>
-    <span class="wip-badge">⚠ WIP</span>
-    <a class="Link" href="Contact.html">Contact me</a>  
+    <div class="wrap">
+      <span>© 2026 Yel0w (<b>Yel0w08</b>)</span>
+      <span class="wip">WIP</span>
+      <a class="link" href="Contact.html">Contact me</a>
+    </div>
   </footer>
 
 </body>
